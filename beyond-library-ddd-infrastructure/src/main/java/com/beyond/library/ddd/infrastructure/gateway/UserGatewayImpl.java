@@ -46,21 +46,22 @@ public class UserGatewayImpl implements UserGateway {
     }
 
     @Override
-    public void saveUser(final User user) {
+    public long saveUser(final User user) {
         final long id = idFactory.generate();
         final UserPO userPO = new UserPO();
         userPO.setId(id);
         userPO.setUsername(user.getUsername());
         userPO.setPassword(user.getPassword());
         userPO.setEmail(user.getEmail());
-        userPO.setRegisterTime(LocalDateTime.now());
-        userPO.setDisabled(false);
-        userPO.setDeleted(false);
+        userPO.setRegisterTime(user.getRegisterTime());
+        userPO.setDisabled(user.getDisabled());
+        userPO.setDeleted(Boolean.FALSE);
         userPO.setCreatedBy(id);
         userPO.setCreatedAt(LocalDateTime.now());
         userPO.setModifiedBy(id);
         userPO.setModifiedAt(LocalDateTime.now());
 
         userRepository.save(userPO);
+        return id;
     }
 }

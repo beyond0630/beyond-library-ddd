@@ -10,5 +10,5 @@ public interface UserGateway {
 
     User getUserByUsername(String username);
 
-    void saveUser(User user);
+    long saveUser(User user);
 }

@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
  */
 @Slf4j
 @Component
-public class AddUserCommandExecutor implements CommandExecutor<AddUserCommand, Void>, InitializingBean {
+public class AddUserCommandExecutor implements CommandExecutor<AddUserCommand, User>, InitializingBean {
 
 
     private final UserGateway userGateway;
@@ -26,7 +26,7 @@ public class AddUserCommandExecutor implements CommandExecutor<AddUserCommand, V
     }
 
     @Override
-    public Void execute(final AddUserCommand addUserCmd) {
+    public User execute(final AddUserCommand addUserCmd) {
         final User user = EntityFactory.getEntity(User.class);
         user.setUsername(addUserCmd.getUserDTO().getUsername());
         user.setPassword(addUserCmd.getUserDTO().getPassword());
@@ -35,14 +35,15 @@ public class AddUserCommandExecutor implements CommandExecutor<AddUserCommand, V
         user.setDisabled(Boolean.FALSE);
 
         user.checkUsername();
-        userGateway.saveUser(user);
-        return null;
+        final long id = userGateway.saveUser(user);
+        user.setId(id);
+        return user;
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
         if (log.isDebugEnabled()) {
-            log.debug("initialized AddUserCommandExecutor ..");
+            log.debug("initialized CommandExecutor[{}]..", this.getName());
         }
     }
 
