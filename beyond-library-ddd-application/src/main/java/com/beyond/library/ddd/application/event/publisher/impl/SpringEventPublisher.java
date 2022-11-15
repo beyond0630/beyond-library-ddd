@@ -3,7 +3,6 @@ package com.beyond.library.ddd.application.event.publisher.impl;
 import com.beyond.library.ddd.application.event.publisher.EventPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class SpringEventPublisher implements EventPublisher<ApplicationEvent> {
+public class SpringEventPublisher implements EventPublisher {
 
     private final ApplicationContext applicationContext;
 
@@ -21,7 +20,7 @@ public class SpringEventPublisher implements EventPublisher<ApplicationEvent> {
     }
 
     @Override
-    public void publish(final ApplicationEvent event) {
+    public <ApplicationEvent> void publish(final ApplicationEvent event) {
         if (log.isDebugEnabled()) {
             log.debug("publish event[{}]: {}", event.getClass().getName(), event);
         }

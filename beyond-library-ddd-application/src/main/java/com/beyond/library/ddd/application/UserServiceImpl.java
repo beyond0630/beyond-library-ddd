@@ -1,7 +1,7 @@
 package com.beyond.library.ddd.application;
 
 import com.beyond.library.ddd.application.event.AddUserEvent;
-import com.beyond.library.ddd.application.event.publisher.impl.SpringEventPublisher;
+import com.beyond.library.ddd.application.event.publisher.EventPublisher;
 import com.beyond.library.ddd.application.exe.cmd.AddUserCommandExecutor;
 import com.beyond.library.ddd.client.UserService;
 import com.beyond.library.ddd.client.cmd.AddUserCommand;
@@ -16,10 +16,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final SpringEventPublisher eventPublisher;
+    private final EventPublisher eventPublisher;
     private final AddUserCommandExecutor addUserCommandExecutor;
 
-    public UserServiceImpl(final SpringEventPublisher eventPublisher,
+    public UserServiceImpl(final EventPublisher eventPublisher,
                            final AddUserCommandExecutor addUserCommandExecutor) {
         this.eventPublisher = eventPublisher;
         this.addUserCommandExecutor = addUserCommandExecutor;

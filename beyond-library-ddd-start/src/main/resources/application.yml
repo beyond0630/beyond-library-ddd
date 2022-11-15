@@ -13,5 +13,5 @@ logging:
   level:
     root: info
     com.beyond.library.ddd.application.exe: debug
-    com.beyond.library.ddd.application.event.publisher: debug
+    com.beyond.library.ddd.application.event: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace

@@ -13,10 +13,6 @@ public class AddUserEvent extends ApplicationEvent {
 
     private User user;
 
-    public AddUserEvent(final Object source) {
-        super(source);
-    }
-
     public AddUserEvent(final Object source, final User user) {
         super(source);
         this.user = user;

@@ -4,8 +4,8 @@ package com.beyond.library.ddd.application.event.publisher;
  * @author beyond
  * @since 2022/11/15
  */
-public interface EventPublisher<Event> {
+public interface EventPublisher {
 
-    void publish(Event e);
+    <Event> void publish(Event event);
 
 }
