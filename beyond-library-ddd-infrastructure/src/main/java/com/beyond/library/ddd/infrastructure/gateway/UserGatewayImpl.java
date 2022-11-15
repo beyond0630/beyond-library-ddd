@@ -1,14 +1,15 @@
 package com.beyond.library.ddd.infrastructure.gateway;
 
 import com.beyond.library.ddd.domain.entity.User;
-import com.beyond.library.ddd.domain.entity.factory.EntityFactory;
 import com.beyond.library.ddd.domain.gateway.UserGateway;
 import com.beyond.library.ddd.infrastructure.common.IdFactory;
+import com.beyond.library.ddd.infrastructure.converter.UserConverter;
 import com.beyond.library.ddd.infrastructure.po.UserPO;
 import com.beyond.library.ddd.infrastructure.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 /**
  * @author beyond
@@ -25,36 +26,20 @@ public class UserGatewayImpl implements UserGateway {
         this.userRepository = userRepository;
     }
 
-    private User poToEntity(final UserPO userPO) {
-        if (userPO == null) {
-            return null;
-        }
-        final User user = EntityFactory.getEntity(User.class);
-        user.setId(userPO.getId());
-        user.setUsername(userPO.getUsername());
-        user.setPassword(userPO.getPassword());
-        user.setEmail(userPO.getEmail());
-        user.setRegisterTime(userPO.getRegisterTime());
-        user.setDisabled(userPO.getDisabled());
-        return user;
-    }
 
     @Override
     public User getUserByUsername(final String username) {
         final UserPO userPO = userRepository.getUserPOByUsername(username);
-        return poToEntity(userPO);
+        return Optional.ofNullable(userPO)
+                .map(UserConverter.INSTANCE::poToEntity)
+                .orElse(null);
     }
 
     @Override
     public long saveUser(final User user) {
         final long id = idFactory.generate();
-        final UserPO userPO = new UserPO();
+        final UserPO userPO = UserConverter.INSTANCE.entityToPo(user);
         userPO.setId(id);
-        userPO.setUsername(user.getUsername());
-        userPO.setPassword(user.getPassword());
-        userPO.setEmail(user.getEmail());
-        userPO.setRegisterTime(user.getRegisterTime());
-        userPO.setDisabled(user.getDisabled());
         userPO.setDeleted(Boolean.FALSE);
         userPO.setCreatedBy(id);
         userPO.setCreatedAt(LocalDateTime.now());

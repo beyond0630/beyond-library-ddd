@@ -27,6 +27,7 @@
         <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
         <spring.cloud.circuitbreaker.version>2.1.1</spring.cloud.circuitbreaker.version>
 
+        <mapstruct.version>1.3.1.Final</mapstruct.version>
     </properties>
 
     <dependencyManagement>
@@ -56,10 +57,11 @@
             </dependency>
 
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.24</version>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
             </dependency>
+
 
         </dependencies>
     </dependencyManagement>
