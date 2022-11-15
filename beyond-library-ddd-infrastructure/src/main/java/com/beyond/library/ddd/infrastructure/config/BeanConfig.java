@@ -1,5 +1,6 @@
-package com.beyond.library.ddd.infrastructure.common;
+package com.beyond.library.ddd.infrastructure.config;
 
+import com.beyond.library.ddd.infrastructure.common.IdFactory;
 import com.beyond.library.ddd.infrastructure.common.impl.SnowflakeIdFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

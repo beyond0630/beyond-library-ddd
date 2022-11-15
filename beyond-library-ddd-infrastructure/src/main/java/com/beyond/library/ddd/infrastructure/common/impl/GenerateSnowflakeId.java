@@ -1,5 +1,6 @@
-package com.beyond.library.ddd.infrastructure.common;
+package com.beyond.library.ddd.infrastructure.common.impl;
 
+import com.beyond.library.ddd.infrastructure.common.IdFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
