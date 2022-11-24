@@ -32,6 +32,13 @@
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-client</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.beyond.library</groupId>
+            <artifactId>beyond-library-ddd-application</artifactId>
+            <version>1.0.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
 </project>
