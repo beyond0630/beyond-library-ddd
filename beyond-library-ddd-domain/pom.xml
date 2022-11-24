@@ -21,7 +21,6 @@
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-common</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>

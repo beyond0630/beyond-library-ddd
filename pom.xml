@@ -32,6 +32,25 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>com.beyond.library</groupId>
+                <artifactId>beyond-library-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond.library</groupId>
+                <artifactId>beyond-library-ddd-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond.library</groupId>
+                <artifactId>beyond-library-ddd-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

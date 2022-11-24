@@ -22,7 +22,6 @@
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-domain</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>

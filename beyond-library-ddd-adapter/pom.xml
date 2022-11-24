@@ -26,13 +26,11 @@
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-common</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-client</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
