@@ -6,6 +6,6 @@ package com.beyond.library.ddd.application.event.publisher;
  */
 public interface EventPublisher {
 
-    <Event> void publish(Event event);
+    void publish(Object event);
 
 }

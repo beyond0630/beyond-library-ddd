@@ -9,7 +9,6 @@ import com.beyond.library.ddd.infrastructure.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 /**
  * @author beyond
@@ -30,15 +29,13 @@ public class UserGatewayImpl implements UserGateway {
     @Override
     public User getUserByUsername(final String username) {
         final UserPO userPO = userRepository.getUserPOByUsername(username);
-        return Optional.ofNullable(userPO)
-                .map(UserConverter.INSTANCE::poToEntity)
-                .orElse(null);
+        return UserConverter.INSTANCE.convert(userPO);
     }
 
     @Override
     public long saveUser(final User user) {
         final long id = idFactory.generate();
-        final UserPO userPO = UserConverter.INSTANCE.entityToPo(user);
+        final UserPO userPO = UserConverter.INSTANCE.convert(user);
         userPO.setId(id);
         userPO.setDeleted(Boolean.FALSE);
         userPO.setCreatedBy(id);
