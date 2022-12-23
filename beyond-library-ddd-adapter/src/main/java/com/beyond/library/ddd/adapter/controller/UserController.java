@@ -4,7 +4,7 @@ import com.beyond.library.ddd.application.exe.cmd.UserRegisterCommandExecutor;
 import com.beyond.library.ddd.client.cmd.UserRegisterCommand;
 import com.beyond.library.ddd.client.dto.UserRegisterDTO;
 import com.beyond.library.ddd.domain.entity.User;
-import com.beyond.library.result.Result;
+import com.beyond.result.Result;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

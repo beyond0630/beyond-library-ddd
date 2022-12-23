@@ -1,7 +1,7 @@
 package com.beyond.library.ddd.adapter.controller;
 
-import com.beyond.library.exception.BizException;
-import com.beyond.library.result.Result;
+import com.beyond.exception.BizException;
+import com.beyond.result.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

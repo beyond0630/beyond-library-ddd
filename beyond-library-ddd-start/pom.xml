@@ -22,25 +22,21 @@
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-adapter</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-application</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-domain</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.beyond.library</groupId>
             <artifactId>beyond-library-ddd-infrastructure</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <dependency>

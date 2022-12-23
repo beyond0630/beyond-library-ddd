@@ -1,9 +1,9 @@
 package com.beyond.library.ddd.domain.entity;
 
+import com.beyond.exception.BizException;
 import com.beyond.library.ddd.domain.ApplicationContextHelper;
 import com.beyond.library.ddd.domain.annotation.EntityComponent;
 import com.beyond.library.ddd.domain.gateway.UserGateway;
-import com.beyond.library.exception.BizException;
 import lombok.Data;
 
 import java.time.LocalDateTime;

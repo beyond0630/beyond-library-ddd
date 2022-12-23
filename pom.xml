@@ -6,7 +6,6 @@
     <artifactId>beyond-library-ddd</artifactId>
     <version>1.0.0</version>
     <modules>
-        <module>beyond-library-common</module>
         <module>beyond-library-ddd-domain</module>
         <module>beyond-library-ddd-infrastructure</module>
         <module>beyond-library-ddd-start</module>
@@ -30,14 +29,35 @@
         <mapstruct.version>1.5.0.Final</mapstruct.version>
         <guava.version>31.0.1-jre</guava.version>
 
+        <beyond-common.version>1.0.0</beyond-common.version>
+        <beyond-framework.version>2.0.0</beyond-framework.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
 
             <dependency>
+                <groupId>com.beyond</groupId>
+                <artifactId>beyond-common</artifactId>
+                <version>${beyond-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond</groupId>
+                <artifactId>beyond-framework</artifactId>
+                <version>${beyond-framework.version}</version>
+                <type>pom</type>
+            </dependency>
+
+            <dependency>
                 <groupId>com.beyond.library</groupId>
-                <artifactId>beyond-library-common</artifactId>
+                <artifactId>beyond-library-ddd-adapter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond.library</groupId>
+                <artifactId>beyond-library-ddd-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -50,6 +70,18 @@
             <dependency>
                 <groupId>com.beyond.library</groupId>
                 <artifactId>beyond-library-ddd-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond.library</groupId>
+                <artifactId>beyond-library-ddd-infrastructure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond.library</groupId>
+                <artifactId>beyond-library-ddd-start</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

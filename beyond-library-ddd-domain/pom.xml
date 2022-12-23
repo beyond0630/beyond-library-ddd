@@ -19,8 +19,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.beyond.library</groupId>
-            <artifactId>beyond-library-common</artifactId>
+            <groupId>com.beyond</groupId>
+            <artifactId>beyond-common</artifactId>
         </dependency>
 
         <dependency>
