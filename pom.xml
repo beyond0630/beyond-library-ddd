@@ -21,7 +21,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <spring.boot.version>2.6.3</spring.boot.version>
+        <spring.boot.version>2.6.13</spring.boot.version>
         <spirng.cloud.version>2021.0.1</spirng.cloud.version>
         <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
         <spring.cloud.circuitbreaker.version>2.1.1</spring.cloud.circuitbreaker.version>
@@ -31,6 +31,7 @@
 
         <beyond-common.version>1.0.0</beyond-common.version>
         <beyond-framework.version>2.0.0</beyond-framework.version>
+        <beyond-config.version>2.0.0</beyond-config.version>
     </properties>
 
     <dependencyManagement>
@@ -40,6 +41,12 @@
                 <groupId>com.beyond</groupId>
                 <artifactId>beyond-common</artifactId>
                 <version>${beyond-common.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.beyond</groupId>
+                <artifactId>beyond-config</artifactId>
+                <version>${beyond-config.version}</version>
             </dependency>
 
             <dependency>
@@ -135,6 +142,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
             </plugin>
         </plugins>
     </build>
