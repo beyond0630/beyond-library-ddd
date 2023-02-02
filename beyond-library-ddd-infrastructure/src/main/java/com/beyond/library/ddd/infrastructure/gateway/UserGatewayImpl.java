@@ -1,8 +1,8 @@
 package com.beyond.library.ddd.infrastructure.gateway;
 
+import com.beyond.id.IdFactory;
 import com.beyond.library.ddd.domain.entity.User;
 import com.beyond.library.ddd.domain.gateway.UserGateway;
-import com.beyond.library.ddd.infrastructure.common.IdFactory;
 import com.beyond.library.ddd.infrastructure.converter.UserConverter;
 import com.beyond.library.ddd.infrastructure.po.UserPO;
 import com.beyond.library.ddd.infrastructure.repository.UserRepository;

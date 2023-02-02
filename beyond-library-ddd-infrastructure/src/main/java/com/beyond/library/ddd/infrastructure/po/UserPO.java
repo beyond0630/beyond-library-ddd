@@ -20,7 +20,7 @@ public class UserPO implements Serializable {
      */
     @Id
     @GeneratedValue(generator = "snowflakeIdFactory")
-    @GenericGenerator(name = "snowflakeIdFactory", strategy = "com.beyond.library.ddd.infrastructure.common.impl.GenerateSnowflakeId")
+    @GenericGenerator(name = "snowflakeIdFactory", strategy = "com.beyond.library.ddd.infrastructure.common.GenerateSnowflakeId")
     @Column(name = "id", nullable = false)
     private Long id;
 

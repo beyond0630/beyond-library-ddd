@@ -1,6 +1,6 @@
-package com.beyond.library.ddd.infrastructure.common.impl;
+package com.beyond.library.ddd.infrastructure.common;
 
-import com.beyond.library.ddd.infrastructure.common.IdFactory;
+import com.beyond.id.IdFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.id.IdentifierGenerator;
@@ -8,6 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 
+/**
+ * @author beyond
+ */
 @Component
 public class GenerateSnowflakeId implements IdentifierGenerator {
 

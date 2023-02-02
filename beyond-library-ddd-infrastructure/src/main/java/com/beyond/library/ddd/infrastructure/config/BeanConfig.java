@@ -1,7 +1,7 @@
 package com.beyond.library.ddd.infrastructure.config;
 
-import com.beyond.library.ddd.infrastructure.common.IdFactory;
-import com.beyond.library.ddd.infrastructure.common.impl.SnowflakeIdFactory;
+import com.beyond.id.IdFactory;
+import com.beyond.id.SnowflakeIdFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
